@@ -12,6 +12,12 @@
   </head>
   <body>
     <div>
+      <%
+        if("noAuth".equals(request.getParameter("action"))){
+      %>
+        <div>Извините, вы магл</div>
+      <%}
+      %>
       <form method="post" name="/index">
         <input type="text" name="login">
         <input type="password" name="password">

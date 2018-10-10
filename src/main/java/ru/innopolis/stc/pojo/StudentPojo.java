@@ -5,6 +5,15 @@ public class StudentPojo {
     private String surname;
     private int groupID;
     private String login;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -38,7 +47,7 @@ public class StudentPojo {
         this.login = login;
     }
 
-    public StudentPojo(String name, String surname, int groupID, String login) {
+    public StudentPojo(int id, String name, String surname, int groupID, String login) {
         this.name = name;
         this.surname = surname;
         this.groupID = groupID;
