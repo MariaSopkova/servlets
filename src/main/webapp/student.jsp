@@ -1,4 +1,4 @@
-<%--
+<%@ page import="ru.innopolis.stc.servlets.student.StudentInformation" %><%--
   Created by IntelliJ IDEA.
   User: Maria
   Date: 09.10.2018
@@ -11,6 +11,11 @@
     <title>Student</title>
 </head>
 <body>
-
+<%
+    StudentInformation student = (StudentInformation)request.getAttribute("studentInfo");
+%>
+<div>
+    Name: <%student.getStudent().getName();%>
+</div>
 </body>
 </html>

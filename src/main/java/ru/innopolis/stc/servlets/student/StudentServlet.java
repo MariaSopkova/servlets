@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class StudetServlet extends HttpServlet {
+public class StudentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = (String)req.getSession().getAttribute("login");
@@ -14,9 +14,8 @@ public class StudetServlet extends HttpServlet {
             StudentInformation studentInformation = new StudentInformation(login);
             if(studentInformation.isFullObject()){
                 req.setAttribute("studentInfo", studentInformation);
-                req.getRequestDispatcher("/student").forward(req,resp);
             }
-
         }
+        req.getRequestDispatcher("/student.jsp").forward(req,resp);
     }
 }

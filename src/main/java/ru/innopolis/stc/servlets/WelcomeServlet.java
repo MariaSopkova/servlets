@@ -15,8 +15,11 @@ public class WelcomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if(req.getSession().getAttribute("role") != null )
-            redirectByRole(resp,(Roles)req.getSession().getAttribute("role") );
+        if(req.getSession().getAttribute("role") != null ) {
+            redirectByRole(resp, (Roles) req.getSession().getAttribute("role"));
+        } else {
+            req.getRequestDispatcher("/index.jsp").forward(req, resp);
+        }
     }
 
     @Override
@@ -42,7 +45,7 @@ public class WelcomeServlet extends HttpServlet {
     private void redirectByRole(HttpServletResponse resp, Roles role) throws IOException {
         switch (role){
             case student: {
-                resp.sendRedirect("/student");
+                resp.sendRedirect("/student.jsp");
                 break;
             }
             case teacher:{
