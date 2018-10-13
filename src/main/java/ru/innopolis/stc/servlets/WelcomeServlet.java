@@ -45,7 +45,7 @@ public class WelcomeServlet extends HttpServlet {
     private void redirectByRole(HttpServletResponse resp, Roles role) throws IOException {
         switch (role){
             case student: {
-                resp.sendRedirect("/student.jsp");
+                resp.sendRedirect("/student");
                 break;
             }
             case teacher:{

@@ -17,17 +17,17 @@ public class GroupDaoImpl implements GroupDao {
         try(Connection connection = connectionManager.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(
                 "SELECT * from \"group\" where id = ?"
-            );
+            )
         ) {
             preparedStatement.setInt(1, id);
             try(ResultSet resultSet = preparedStatement.executeQuery()){
-                createGroup(resultSet);
+                return createGroup(resultSet);
             }
         } catch (SQLException e) {
             //TODO залогировать
             e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     private GroupPojo createGroup(ResultSet resultSet){

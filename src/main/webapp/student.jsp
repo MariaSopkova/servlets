@@ -15,7 +15,13 @@
     StudentInformation student = (StudentInformation)request.getAttribute("studentInfo");
 %>
 <div>
-    Name: <%student.getStudent().getName();%>
+    <% if (student != null){ %>
+        Student: <%=student.getStudent().getName()%> <%=student.getStudent().getSurname()%><br>
+        Course: <%=student.getGroup().getCourse()%><br>
+        House: <%=student.getHouse().getName()%>
+    <%} else {%>
+        Something goes wrong.
+    <%}%>
 </div>
 </body>
 </html>

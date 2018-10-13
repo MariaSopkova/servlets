@@ -3,11 +3,13 @@ package ru.innopolis.stc.dao.house;
 import ru.innopolis.stc.connection.ConnectionManager;
 import ru.innopolis.stc.connection.ConnectionManagerJDNCImpl;
 import ru.innopolis.stc.pojo.HousePojo;
+import ru.innopolis.stc.pojo.StudentPojo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class HouseDaoImpl implements HouseDao{
     ConnectionManager connectionManager = ConnectionManagerJDNCImpl.getInstanse();
@@ -24,8 +26,8 @@ public class HouseDaoImpl implements HouseDao{
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            return null;
         }
-        return null;
     }
 
     private HousePojo createHouse(ResultSet resultSet){
@@ -35,7 +37,7 @@ public class HouseDaoImpl implements HouseDao{
                         resultSet.getString("name"),
                         resultSet.getInt("head"),
                         resultSet.getInt("id"),
-                        resultSet.getInt("points")
+                        resultSet.getInt("score")
                 );
             } else{
                 return null;
@@ -45,5 +47,18 @@ public class HouseDaoImpl implements HouseDao{
             e.printStackTrace();
             return null;
         }
+    }
+
+    @Override
+    public List<StudentPojo> getStudentsByHouse(int id) {
+       try(Connection connection = connectionManager.getConnection();
+           PreparedStatement preparedStatement = connection.prepareStatement(
+                   "SELECT * from \"group\""
+           )
+       ) {
+       } catch (SQLException e) {
+           e.printStackTrace();
+       }
+       return null;
     }
 }

@@ -21,7 +21,7 @@ public class StudentDaoImpl implements StudentDao {
              )){
             preparedStatement.setString(1,login);
             try(ResultSet resultSet = preparedStatement.executeQuery()){
-                createStudent(resultSet);
+                return createStudent(resultSet);
             } catch (Exception ex){
                 //TODO залогировать
                 return null;
@@ -30,7 +30,6 @@ public class StudentDaoImpl implements StudentDao {
             //TODO залогировать
             return null;
         }
-        return null;
     }
 
     private StudentPojo createStudent(ResultSet resultSet){
