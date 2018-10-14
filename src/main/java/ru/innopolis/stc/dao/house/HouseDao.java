@@ -8,4 +8,5 @@ import java.util.List;
 public interface HouseDao {
     public HousePojo getHouseById(int id);
     public List<StudentPojo> getStudentsByHouse(int id);
+    public List<HousePojo> getHouses();
 }

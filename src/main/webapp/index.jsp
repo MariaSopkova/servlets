@@ -23,6 +23,7 @@
         <input type="password" name="password">
         <input type="submit">
       </form>
+      <a href="greatHall">great hall</a>
     </div>
   </body>
 </html>

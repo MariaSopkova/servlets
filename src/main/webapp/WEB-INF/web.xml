@@ -27,4 +27,12 @@
         <url-pattern>/student</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>GreatHall</servlet-name>
+        <servlet-class>ru.innopolis.stc.servlets.greatHall.GreatHallServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GreatHall</servlet-name>
+        <url-pattern>/greatHall</url-pattern>
+    </servlet-mapping>
 </web-app>
