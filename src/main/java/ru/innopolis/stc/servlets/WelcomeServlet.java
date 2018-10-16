@@ -52,6 +52,10 @@ public class WelcomeServlet extends HttpServlet {
                 resp.sendRedirect("/teacher");
                 break;
             }
+            case headmaster:{
+                resp.sendRedirect("/headmaster");
+                break;
+            }
             default:{
                 resp.sendRedirect("/index?action=noAuth");
                 break;

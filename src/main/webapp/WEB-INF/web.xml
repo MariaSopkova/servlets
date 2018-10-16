@@ -35,4 +35,13 @@
         <servlet-name>GreatHall</servlet-name>
         <url-pattern>/greatHall</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Headmaster</servlet-name>
+        <servlet-class>ru.innopolis.stc.servlets.HeadmasterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Headmaster</servlet-name>
+        <url-pattern>/headmaster</url-pattern>
+    </servlet-mapping>
 </web-app>

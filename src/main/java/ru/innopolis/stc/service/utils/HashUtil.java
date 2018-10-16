@@ -27,6 +27,6 @@ public class HashUtil {
     }
 
     public static void main(String[] args) {
-        System.out.println(HashUtil.stringToMD5("HarryPotter"));
+        System.out.println(HashUtil.stringToMD5("AlbusDumbledore"));
     }
 }

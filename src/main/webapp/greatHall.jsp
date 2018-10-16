@@ -32,13 +32,5 @@
         <%}
     }
 %>
-<%--<c:forEach var="house" items="{housesInfo}">
-    <c:out value="${house.getHouse().getName()}"/><br>
-    <c:set var="students" value="${house.getStudents}"/>
-    <c:forEach var="student" items="student">
-        <c:out value="$student.getName()"> </c:out>
-        <c:out value="$student.getSurname()"></c:out><br>
-    </c:forEach>
-</c:forEach>--%>
 </body>
 </html>
