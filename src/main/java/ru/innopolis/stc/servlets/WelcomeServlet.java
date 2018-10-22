@@ -2,6 +2,7 @@ package ru.innopolis.stc.servlets;
 
 import ru.innopolis.stc.pojo.LoginPassword;
 import ru.innopolis.stc.pojo.Roles;
+import ru.innopolis.stc.service.Logger;
 import ru.innopolis.stc.service.loginService.LoginService;
 import ru.innopolis.stc.service.loginService.LoginServiceImpl;
 
@@ -29,10 +30,11 @@ public class WelcomeServlet extends HttpServlet {
         String password = req.getParameter("password");
         LoginPassword loginPassword = loginService.getLoginPassword(login, password);
         if( loginPassword != null ) {
+            Logger.AddSuccessfulLoginInfo(login);
             setSessionData(req, loginPassword);
             redirectByRole(resp, loginPassword.getRole());
         } else {
-            //TODO логирование
+            Logger.AddNotSuccessfulLoginInfo(login);
             redirectByRole(resp, Roles.none);
         }
     }

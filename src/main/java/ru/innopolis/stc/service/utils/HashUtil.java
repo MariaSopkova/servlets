@@ -1,10 +1,13 @@
 package ru.innopolis.stc.service.utils;
 
+import org.apache.log4j.Logger;
+
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class HashUtil {
+    final static Logger LOGGER = Logger.getLogger(HashUtil.class);
     private HashUtil(){
 
     }
@@ -27,6 +30,7 @@ public class HashUtil {
     }
 
     public static void main(String[] args) {
+        LOGGER.debug("AlbusDumbledore");
         System.out.println(HashUtil.stringToMD5("AlbusDumbledore"));
     }
 }
